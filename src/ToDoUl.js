@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 
 
 class ToDoUl extends Component {
-    constructor(props){
-        super(props)
+   
+    removeZadanie(item){
+        console.log(item);
+        this.props.removeZadanie(item.key);
     }
     
     createItemLi = (item) => {
-        return <li key={item.key}>{item.nazwa}<hr/> </li> ;
+        return <li onClick={()=>
+this.removeZadanie(item)} key={item.key}>{item.nazwa}<hr/> </li> ;
     }
     
     render(){
@@ -22,7 +25,4 @@ class ToDoUl extends Component {
         )
     }
 }
-
-
-
 export default ToDoUl;

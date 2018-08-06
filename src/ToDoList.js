@@ -32,6 +32,15 @@ class ToDoList extends Component {
             this._inputName.value = "";
     }
     
+    
+    removeZadanieFromState =(key) =>{
+        let filteredZadania = this.state.zadania.filter(item => item.key !==key);
+        this.setState( () => {
+            return{
+                zadania: filteredZadania
+            }
+        })
+    }
     render() { 
         return (
           <div className="ToDoList">
@@ -40,7 +49,8 @@ class ToDoList extends Component {
                  <input ref={(zadanie) =>{this._inputName = zadanie}} type="text"/>
                  <input type="submit" value="Add item"/>
              </form>
-             <ToDoUl listaZadan={this.state.zadania} />
+             <ToDoUl listaZadan={this.state.zadania}
+             removeZadanie={this.removeZadanieFromState} />
           </div>
         );
     }
