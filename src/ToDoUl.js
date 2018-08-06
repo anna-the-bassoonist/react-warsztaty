@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 
 class ToDoUl extends Component {
    
-    removeZadanie(item){
-        console.log(item);
+    removeZadanie = (item)=> {
+//        console.log(item);
         this.props.removeZadanie(item.key);
     }
     

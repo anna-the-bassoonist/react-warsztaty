@@ -34,6 +34,7 @@ class ToDoList extends Component {
     
     
     removeZadanieFromState =(key) =>{
+        console.log(key);
         let filteredZadania = this.state.zadania.filter(item => item.key !==key);
         this.setState( () => {
             return{
